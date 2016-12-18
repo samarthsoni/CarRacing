@@ -4,3 +4,9 @@ F:\workspace\epic\CarRacing\CarRacing\bin\Debug\CarRacing.pdb
 F:\workspace\epic\CarRacing\CarRacing\obj\Debug\CarRacing.csprojResolveAssemblyReference.cache
 F:\workspace\epic\CarRacing\CarRacing\obj\Debug\CarRacing.exe
 F:\workspace\epic\CarRacing\CarRacing\obj\Debug\CarRacing.pdb
+F:\workspace\C# workspace\CarRacing\CarRacing\bin\Debug\CarRacing.exe.config
+F:\workspace\C# workspace\CarRacing\CarRacing\obj\Debug\CarRacing.exe
+F:\workspace\C# workspace\CarRacing\CarRacing\obj\Debug\CarRacing.pdb
+F:\workspace\C# workspace\CarRacing\CarRacing\bin\Debug\CarRacing.exe
+F:\workspace\C# workspace\CarRacing\CarRacing\bin\Debug\CarRacing.pdb
+F:\workspace\C# workspace\CarRacing\CarRacing\obj\Debug\CarRacing.csprojResolveAssemblyReference.cache

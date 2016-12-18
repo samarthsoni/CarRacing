@@ -1,0 +1,9 @@
+F:\workspace\C# workspace\CarRacing\CarRacingTest\bin\Debug\CarRacingTest.dll
+F:\workspace\C# workspace\CarRacing\CarRacingTest\bin\Debug\CarRacingTest.pdb
+F:\workspace\C# workspace\CarRacing\CarRacingTest\bin\Debug\CarRacing.exe
+F:\workspace\C# workspace\CarRacing\CarRacingTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+F:\workspace\C# workspace\CarRacing\CarRacingTest\bin\Debug\CarRacing.pdb
+F:\workspace\C# workspace\CarRacing\CarRacingTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+F:\workspace\C# workspace\CarRacing\CarRacingTest\obj\Debug\CarRacingTest.csprojResolveAssemblyReference.cache
+F:\workspace\C# workspace\CarRacing\CarRacingTest\obj\Debug\CarRacingTest.dll
+F:\workspace\C# workspace\CarRacing\CarRacingTest\obj\Debug\CarRacingTest.pdb

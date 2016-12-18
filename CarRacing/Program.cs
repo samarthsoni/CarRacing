@@ -12,19 +12,27 @@ namespace CarRacing
         static void Main(string[] args)
         {
             int NoOfCars;
-            SynchronizedRandomGenerator rd = new SynchronizedRandomGenerator();
-
+            
             Console.WriteLine("Enter the number fo cars:");
             string input = Console.ReadLine();
-            while(int.TryParse(input,out NoOfCars)==false)
+            while(int.TryParse(input,out NoOfCars)==false || NoOfCars<=0)
             {
                 Console.WriteLine("Invalid Input. Enter the number fo cars again:");
                 input = Console.ReadLine();
             }
 
+            start_race(NoOfCars);
+            
+            Console.Read();
+        }
 
+        //Instantiates different cars and starts race with dedicated thread for each car.
+        static void start_race(int NoOfCars)
+        {
+            SynchronizedRandomGenerator rd = new SynchronizedRandomGenerator();
             Car[] cars = new Car[NoOfCars];
             int result = 0;
+
             for (int c = 0; c < NoOfCars; c++)
             {
                 cars[c] = new Car(c, rd, 1000);
@@ -55,7 +63,6 @@ namespace CarRacing
             // the parent process.
             Environment.ExitCode = result;
 
-            Console.Read();
         }
     }
 }

@@ -27,6 +27,8 @@ namespace CarRacing
             R = rd;
             DestKM = destKM;
         }
+
+        //Allows a car to Race. Updates past kilometers on console and updates when a car finsihes race.
         public void Race()
         {
             int pastKM=0;

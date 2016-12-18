@@ -14,6 +14,8 @@ namespace CarRacing
         {
             rnd = new System.Random();
         }
+
+        //Generates and returns a random number in specific range
         public int Next(int minValue,int maxValue)
         {
             lock(this)
