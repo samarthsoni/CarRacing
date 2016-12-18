@@ -40,10 +40,10 @@ namespace CarRacing
 
                 if (pastKM >= DestKM)
                 {
-                    Console.WriteLine("Car " + CarID + " finished the race");
+                    Console.WriteLine("Car:{0}  Finished the race",CarID);
                 }
                 else
-                    Console.WriteLine("Car:"+CarID+" The number of kilometers past:" + pastKM);
+                    Console.WriteLine("Car:{0}  The number of kilometers past:{1}",CarID,pastKM);
 
                 Thread.Sleep(10);
             }
