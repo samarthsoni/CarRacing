@@ -9,38 +9,39 @@ namespace CarRacing
 {
     class Program
     {
+        static private readonly int raceDistance = 1000;
         static void Main(string[] args)
         {
-            int NoOfCars;
+            int noOfCars;
             
             Console.WriteLine("Enter the number fo cars:");
             string input = Console.ReadLine();
-            while(int.TryParse(input,out NoOfCars)==false || NoOfCars<=0)
+            while(int.TryParse(input,out noOfCars) ==false || noOfCars <= 0)
             {
-                Console.WriteLine("Invalid Input. Enter the number fo cars again:");
+                Console.WriteLine("Invalid Input. Enter the number of cars again:");
                 input = Console.ReadLine();
             }
 
-            start_race(NoOfCars);
+            start_race(noOfCars);
             
             Console.Read();
         }
 
         //Instantiates different cars and starts race with dedicated thread for each car.
-        static void start_race(int NoOfCars)
+        static void start_race(int noOfCars)
         {
-            SynchronizedRandomGenerator rd = new SynchronizedRandomGenerator();
-            Car[] cars = new Car[NoOfCars];
+            SynchronizedRandomGenerator randomGenerator = new SynchronizedRandomGenerator();
+            Car[] cars = new Car[noOfCars];
             int result = 0;
 
-            for (int c = 0; c < NoOfCars; c++)
+            for (int c = 0; c < noOfCars; c++)
             {
-                cars[c] = new Car(c, rd, 1000);
+                cars[c] = new Car(c, randomGenerator, raceDistance);
             }
 
             try
             {
-                for (int c = 0; c < NoOfCars; c++)
+                for (int c = 0; c < noOfCars; c++)
                 {
                     Thread newThread = new Thread(new ThreadStart(cars[c].Race));
                     newThread.Name = c.ToString();
