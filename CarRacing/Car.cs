@@ -1,54 +1,40 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Threading;
 
 namespace CarRacing
 {
     public sealed class Car
     {
-        SynchronizedRandomGenerator R;
-        
-        public int CarID
-        {
-            get; set;
-        }
+        private readonly SynchronizedRandomGenerator randomGenerator;
 
-        public int DestKM
-        {
-            get; set;
-        }
+        private int CarId { get; }
+        private int DestKm { get; }
 
-        public Car(int carID, SynchronizedRandomGenerator rd, int destKM)
-        {
-            CarID = carID;
-            R = rd;
-            DestKM = destKM;
+        public Car(int carId, SynchronizedRandomGenerator rd, int destKm)
+        {   
+            CarId = carId;
+            DestKm = destKm;
+            randomGenerator = rd;
         }
 
         //Allows a car to Race. Updates past kilometers on console and updates when a car finsihes race.
         public void Race()
         {
-            int pastKM=0;
+            var pastKm = 0;
 
-            while(pastKM<DestKM)
+            while(pastKm < DestKm)
             {
-                int a = R.Next(pastKM, DestKM);
-                pastKM = pastKM + a;
+                pastKm = pastKm + randomGenerator.Next(pastKm, DestKm); ;
 
-                if (pastKM >= DestKM)
+                if (pastKm >= DestKm)
                 {
-                    Console.WriteLine("Car:{0}  Finished the race",CarID);
+                    Console.WriteLine("Car:{0}  Finished the race",CarId);
                 }
                 else
-                    Console.WriteLine("Car:{0}  The number of kilometers past:{1}",CarID,pastKM);
+                    Console.WriteLine("Car:{0}  The number of kilometers past: {1}",CarId,pastKm);
 
                 Thread.Sleep(10);
             }
-            
-            
         }
     }
 }

@@ -10,3 +10,9 @@ F:\workspace\C# workspace\CarRacing\CarRacing\obj\Debug\CarRacing.pdb
 F:\workspace\C# workspace\CarRacing\CarRacing\bin\Debug\CarRacing.exe
 F:\workspace\C# workspace\CarRacing\CarRacing\bin\Debug\CarRacing.pdb
 F:\workspace\C# workspace\CarRacing\CarRacing\obj\Debug\CarRacing.csprojResolveAssemblyReference.cache
+C:\Development\Epic Digital\Interviews\SamarthSoni\CarRacing\bin\Debug\CarRacing.exe.config
+C:\Development\Epic Digital\Interviews\SamarthSoni\CarRacing\obj\Debug\CarRacing.exe
+C:\Development\Epic Digital\Interviews\SamarthSoni\CarRacing\obj\Debug\CarRacing.pdb
+C:\Development\Epic Digital\Interviews\SamarthSoni\CarRacing\bin\Debug\CarRacing.exe
+C:\Development\Epic Digital\Interviews\SamarthSoni\CarRacing\bin\Debug\CarRacing.pdb
+C:\Development\Epic Digital\Interviews\SamarthSoni\CarRacing\obj\Debug\CarRacing.csprojResolveAssemblyReference.cache

@@ -1,49 +1,45 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace CarRacing
 {
-    class Program
+    public static class Program
     {
-        static void Main(string[] args)
+        public static void Main()
         {
-            int NoOfCars;
+            int noOfCars;
             
             Console.WriteLine("Enter the number fo cars:");
-            string input = Console.ReadLine();
-            while(int.TryParse(input,out NoOfCars)==false || NoOfCars<=0)
+            var input = Console.ReadLine();
+
+            while ( !int.TryParse(input,out noOfCars) || noOfCars <= 0)
             {
                 Console.WriteLine("Invalid Input. Enter the number fo cars again:");
                 input = Console.ReadLine();
             }
 
-            start_race(NoOfCars);
+            StartRace(noOfCars);
             
             Console.Read();
         }
 
         //Instantiates different cars and starts race with dedicated thread for each car.
-        static void start_race(int NoOfCars)
+        private static void StartRace(int noOfCars)
         {
-            SynchronizedRandomGenerator rd = new SynchronizedRandomGenerator();
-            Car[] cars = new Car[NoOfCars];
-            int result = 0;
+            var rd = new SynchronizedRandomGenerator();
+            var cars = new Car[noOfCars];
+            var result = 0;
 
-            for (int c = 0; c < NoOfCars; c++)
+            for (var c = 0; c < noOfCars; c++)
             {
                 cars[c] = new Car(c, rd, 1000);
             }
 
             try
             {
-                for (int c = 0; c < NoOfCars; c++)
+                for (var c = 0; c < noOfCars; c++)
                 {
-                    Thread newThread = new Thread(new ThreadStart(cars[c].Race));
-                    newThread.Name = c.ToString();
+                    var newThread = new Thread(cars[c].Race) {Name = c.ToString()};
                     newThread.Start();
                 }
             }
@@ -62,7 +58,6 @@ namespace CarRacing
             // Even though Main returns void, this provides a return code to 
             // the parent process.
             Environment.ExitCode = result;
-
         }
     }
 }
