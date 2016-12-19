@@ -1,18 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CarRacing
 {
     public sealed class SynchronizedRandomGenerator
     {
-        Random rnd;
+        private Random randomGenerator;
 
         public SynchronizedRandomGenerator()
         {
-            rnd = new System.Random();
+            randomGenerator = new Random();
         }
 
         //Generates and returns a random number in specific range
@@ -20,7 +16,7 @@ namespace CarRacing
         {
             lock(this)
             {
-                return rnd.Next(minValue, maxValue);
+                return randomGenerator.Next(minValue, maxValue);
             }
         }
     }
