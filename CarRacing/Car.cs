@@ -9,7 +9,7 @@ namespace CarRacing
 {
     public sealed class Car
     {
-        SynchronizedRandomGenerator R;
+        SynchronizedRandomGenerator _randomGenerator;
         
         public int CarID
         {
@@ -21,10 +21,10 @@ namespace CarRacing
             get; set;
         }
 
-        public Car(int carID, SynchronizedRandomGenerator rd, int destKM)
+        public Car(int carID, SynchronizedRandomGenerator randomGenerator, int destKM)
         {
             CarID = carID;
-            R = rd;
+            _randomGenerator = randomGenerator;
             DestKM = destKM;
         }
 
@@ -33,10 +33,10 @@ namespace CarRacing
         {
             int pastKM=0;
 
-            while(pastKM<DestKM)
+            while(pastKM < DestKM)
             {
-                int a = R.Next(pastKM, DestKM);
-                pastKM = pastKM + a;
+                int a = _randomGenerator.Next(pastKM, DestKM);
+                pastKM += a;
 
                 if (pastKM >= DestKM)
                 {
@@ -47,8 +47,6 @@ namespace CarRacing
 
                 Thread.Sleep(10);
             }
-            
-            
         }
     }
 }
